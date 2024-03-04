@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Github Fetcher Assignment</string>
+    <string name="text_field_hint">Enter a Github user id</string>
+    <string name="back_content_description">Go back</string>
+    <string name="avatar_content_description">github avatar image</string>
+    <string name="search_label">Search</string>
+    <string name="totForks_label">Total Forks</string>
+    <string name="forks_label">Forks</string>
+    <string name="repositoryName_label">Repository Name</string>
+    <string name="repositoryDescription_label">Description</string>
+    <string name="repositoryStars_label">Stars</string>
+    <string name="repositoryUpdate_label">Last Update</string>
+</resources>
