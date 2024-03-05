@@ -43,3 +43,8 @@ All the requested tasks have been completed.
 - [x] Nice to have documentation
 
 # DEMO
+https://github.com/icefields/Github-Fetch-Assignment/assets/149625124/867e42a2-7bb4-4a20-ab8b-a857faa98e81
+
+# DEMO Dark, with state retention over configuration changes
+https://github.com/icefields/Github-Fetch-Assignment/assets/149625124/22aef4b9-4998-4022-bc98-40872558c802
+
