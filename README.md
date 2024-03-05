@@ -3,11 +3,11 @@
 
 ##	Design Requirements
 I followed the design requirements and replicated the animations from the video as best as I could.
-**NOTE** the app demonstrated in the video uses Material2, an older version of Google's official design system, the current version is Material3. I took the liberty of using Material3 with MaterialYou theme for the app colours, this means the UI theme will change according to the user's phone theme (to test the feature, try changing phone backgrond). Other small difference include the default elevation for cards, the corder radius and the button shape and backgroud.
+**NOTE** the app demonstrated in the video uses Material2, an older version of Google's official design system, the current version is Material3. I took the liberty of using Material3 with MaterialYou theme for the app colours, this means the UI theme will change according to the user's phone theme (to test the feature, try changing phone backgrond). Other small differences include the default elevation for cards, the corder radius, the coloured top bar, and the button shape and background.
 
 ##	Architectural Patterns
 For this project I used MVVM with Clean-Architecture.
-I like using clean architecture when starting a new project for various reasons.
+I like using Clean-Architecture when starting a new project for various reasons.
 Advantages of Using Clean Architecture
 - The package structure is even easier to navigate.
 - Features can be implemented even more quickly.
@@ -25,7 +25,7 @@ The code follows SOLID principles and MVVM Clean-Architecture design-patterns ru
 **Models**
 Models are separated into data transfer objects (dto), the raw data received from our API calls, and app domain models, the models usable by the app. The conversion is done using a `.toModel()` kotlin extension (ie. see `fun UserDto.toGithubUser()` inside UserDto data class).
 <br>
-The clean separation of the data layer (including the separation of DTO and domain-models) allows us to plug any backend to the app, we could very easily re-implemente the data layer to work with GitLab for example.
+The clean separation of the data layer (including the separation of DTO and domain-models) allows us to plug any backend to the app, we could very easily re-implement the data layer to work with GitLab for example.
 <br>
 I used Use-Cases to follow the design pattern by the book. They are a bit overkill for such a small app, we can very easily remove this layer and collect results from flows directly in the view model, like regular non clean-architecture MVVM.
 
