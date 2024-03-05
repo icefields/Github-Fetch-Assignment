@@ -6,12 +6,13 @@
     <dimen name="userDetailScreen_top_padding">16dp</dimen>
     <dimen name="searchBtn_padding_horizontal">16dp</dimen>
     <dimen name="searchBtn_spacing_horizontal">16dp</dimen>
-    <dimen name="userImg_padding">16dp</dimen>
+    <dimen name="userImg_padding_h">16dp</dimen>
+    <dimen name="userImg_padding_v">16dp</dimen>
     <dimen name="title_text_size">18sp</dimen>
     <dimen name="subtitle_text_size">16sp</dimen>
     <dimen name="repoCard_spacing_center">16sp</dimen>
     <dimen name="repoCard_padding">16sp</dimen>
-    <dimen name="repoCard_spacing_vertical">27sp</dimen>
+    <dimen name="repoCard_spacing_vertical">22dp</dimen>
     <dimen name="username_userDetail_text_size">44sp</dimen>
     <dimen name="forks_userDetail_text_size">77sp</dimen>
     <dimen name="userDetailScreen_spacing">44dp</dimen>

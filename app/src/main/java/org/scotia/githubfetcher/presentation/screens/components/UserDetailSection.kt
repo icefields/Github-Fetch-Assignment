@@ -36,7 +36,10 @@ import org.scotia.githubfetcher.presentation.common.TitleText
             modifier = Modifier
                 // all I see from the video is that the image takes about 30/40% of the screen width
                 .fillMaxWidth(0.4f)
-                .padding(dimensionResource(id = R.dimen.userImg_padding)),
+                .padding(
+                    horizontal = dimensionResource(id = R.dimen.userImg_padding_h),
+                    vertical = dimensionResource(id = R.dimen.userImg_padding_v)
+                ),
             model = user.avatarUrl,
             error = painterResource(id = R.drawable.ic_github),
             placeholder = painterResource(id = R.drawable.ic_github),

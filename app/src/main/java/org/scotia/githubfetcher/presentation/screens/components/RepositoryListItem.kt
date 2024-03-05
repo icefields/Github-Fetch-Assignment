@@ -36,12 +36,13 @@ fun RepositoryListItem(
         Column(
             modifier = modifier
                 .padding(dimensionResource(id = R.dimen.repoCard_padding))
+                .clickable {
+                    onItemClick(repository.name)
+                }.testTag(Constants.TAG_LIST_ITEM)
 
         ) {
             TitleText(
-                modifier = Modifier.fillMaxWidth().clickable {
-                    onItemClick(repository.name)
-                }.testTag(Constants.TAG_LIST_ITEM),
+                modifier = Modifier.fillMaxWidth(),
                 text = repository.name
             )
             Spacer(modifier = Modifier.height(dimensionResource(id = R.dimen.repoCard_spacing_center)))

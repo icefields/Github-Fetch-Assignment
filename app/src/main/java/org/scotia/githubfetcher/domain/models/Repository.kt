@@ -1,10 +1,13 @@
 package org.scotia.githubfetcher.domain.models
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
 import org.scotia.githubfetcher.common.Constants.ERROR_STRING
 import org.scotia.githubfetcher.common.isoZonedDateToLocalDateTime
 import org.scotia.githubfetcher.common.toFormattedString
 import java.time.LocalDateTime
 
+@Parcelize
 data class Repository(
     val name: String,
     val ownerId: String,
@@ -12,7 +15,7 @@ data class Repository(
     private val updatedAt: String,
     val stargazersCount: Int,
     val forks: Int
-) {
+): Parcelable {
     /**
      * returns the LocalDateTime object from the updatedAt string date
      */

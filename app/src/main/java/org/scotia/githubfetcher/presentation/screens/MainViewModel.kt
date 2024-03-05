@@ -30,7 +30,7 @@ class MainViewModel @Inject constructor(
         // disable in gradle (RESTORE_STATE = false) if not necessary
         if (BuildConfig.RESTORE_STATE) {
             state.user?.name?.let { username ->
-                handleEvent(MainEvent.OnFetchUser(username))
+                fetchData(username)
             }
         }
     }
@@ -42,15 +42,18 @@ class MainViewModel @Inject constructor(
         when(event) {
             MainEvent.OnFetchRepos ->
                 getRepos()
-            is MainEvent.OnFetchUser -> viewModelScope.launch {
-                // the 2 calls don't depend on each other's execution, they can be executed
-                // asynchronously for better performance
-                val userDataDeferred = async { getUserInfo(event.username) }
-                val repoDataDeferred = async { getRepos(event.username) }
-                userDataDeferred.await()
-                repoDataDeferred.await()
-            }
+            is MainEvent.OnFetchUser ->
+                fetchData(event.username)
         }
+    }
+
+    private fun fetchData(username: String) = viewModelScope.launch {
+        // the 2 calls don't depend on each other's execution, they can be executed
+        // asynchronously for better performance
+        val userDataDeferred = async { getUserInfo(username) }
+        val repoDataDeferred = async { getRepos(username) }
+        userDataDeferred.await()
+        repoDataDeferred.await()
     }
 
     private suspend fun getUserInfo(username: String) =

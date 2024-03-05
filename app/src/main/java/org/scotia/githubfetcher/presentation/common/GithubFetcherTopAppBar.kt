@@ -30,8 +30,8 @@ fun GithubFetcherTopAppBar(
 ) {
     TopAppBar(
         modifier = Modifier.background(Color.Transparent),
-        colors = TopAppBarDefaults.largeTopAppBarColors(
-            scrolledContainerColor = MaterialTheme.colorScheme.surface,
+        colors = TopAppBarDefaults.topAppBarColors(
+            containerColor = MaterialTheme.colorScheme.surface,
         ),
         title = {
             Text(modifier = Modifier

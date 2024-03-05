@@ -29,11 +29,14 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
+import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
@@ -129,6 +132,7 @@ fun MainScreenScaffold(
     }
 }
 
+@OptIn(ExperimentalComposeUiApi::class)
 @Composable
 fun MainScreenContent(
     user: GithubUser?,
@@ -140,8 +144,10 @@ fun MainScreenContent(
     onRefresh: () -> Unit,
     onSubmitUsername: (username: String) -> Unit
 ) {
-    var username by remember { mutableStateOf("") }
+    var username by rememberSaveable { mutableStateOf("") }
     val swipeRefreshState = rememberSwipeRefreshState(isRefreshing)
+
+    val kbController = LocalSoftwareKeyboardController.current
 
     Column(modifier = Modifier
         .fillMaxSize()
@@ -155,7 +161,9 @@ fun MainScreenContent(
             verticalAlignment = Alignment.CenterVertically
         ) {
             OutlinedTextField(
-                modifier = Modifier.weight(1f).testTag(TAG_INPUT_VIEW),
+                modifier = Modifier
+                    .weight(1f)
+                    .testTag(TAG_INPUT_VIEW),
                 label = {
                     Text(text = stringResource(id = R.string.text_field_hint))
                 },
@@ -166,6 +174,7 @@ fun MainScreenContent(
             Button(
                 onClick = {
                     onSubmitUsername(username)
+                    kbController?.hide()
                 }
             ) {
                 Text(text = stringResource(id = R.string.search_label))
@@ -176,7 +185,8 @@ fun MainScreenContent(
         // slide up vertically too, but hard to say for sure because of the slow fade in
         val userSectionVisible = user != null
         AnimatedVisibility(visible = isUserLoading && !userSectionVisible) {
-            CircularProgressIndicator(modifier = Modifier.testTag(TAG_LOADING_VIEW)
+            CircularProgressIndicator(modifier = Modifier
+                .testTag(TAG_LOADING_VIEW)
                 .fillMaxWidth()
                 .height(30.dp)
             )
@@ -205,7 +215,8 @@ fun MainScreenContent(
                 enter = slideInVertically(spring(stiffness = Spring.StiffnessLow))
             ) {
                 LazyColumn(
-                    modifier = Modifier.fillMaxSize()
+                    modifier = Modifier
+                        .fillMaxSize()
                         .testTag(TAG_REPO_LIST)
                 ) {
                     items(repos) {
