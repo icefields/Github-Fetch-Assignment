@@ -29,6 +29,15 @@ The clean separation of the data layer (including the separation of DTO and doma
 <br>
 I used Use-Cases to follow the design pattern by the book. They are a bit overkill for such a small app, we can very easily remove this layer and collect results from flows directly in the view model, like regular non clean-architecture MVVM.
 
+## Testing
+I tried to cover the 3 Major types of testing
+- unit testing
+	- tested business logic of 2 of the 3 use cases and a repository
+- integration (instrumented) testing
+	- tested the main page UI and interaction
+- end to end testing
+	- tested full user behaviour. Set of actions that would lead to expected results. ie. fetch, navigate, verify data validity.
+
 ##	Functional	Requirements
 All the requested tasks have been completed.
 - [x] The app should accept	a github user's id as input and display the specified user's avatar and name.
