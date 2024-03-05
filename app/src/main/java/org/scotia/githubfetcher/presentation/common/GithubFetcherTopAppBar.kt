@@ -20,6 +20,9 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import org.scotia.githubfetcher.common.Constants.TAG_USER_DETAIL_NAME
 
+/**
+ * common app bar for all 3 screens
+ */
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalFoundationApi::class)
 @Composable
 fun GithubFetcherTopAppBar(

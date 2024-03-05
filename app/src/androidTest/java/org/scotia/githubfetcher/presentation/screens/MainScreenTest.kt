@@ -65,9 +65,6 @@ class MainScreenTest {
 
     @Test
     fun userSection_checkUserVisibility() {
-        // we can test actions, ie. press button or we can make assertions, like check if a certain
-        // text field contains a certain text, or make sure some button is enabled and so on
-
         // when screen starts make sure user is not visible, then when retrieved it will be visible
         composeRule.onNodeWithTag(TAG_USER_SECTION).assertDoesNotExist()
         inputUserAndSend()

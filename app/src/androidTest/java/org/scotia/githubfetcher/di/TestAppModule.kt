@@ -1,11 +1,9 @@
 package org.scotia.githubfetcher.di
 
-import dagger.Binds
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import org.scotia.githubfetcher.data.GithubDataRepositoryImpl
 import org.scotia.githubfetcher.data.MainNetwork
 import org.scotia.githubfetcher.data.MockMainNetwork
 import org.scotia.githubfetcher.domain.GithubDataRepository

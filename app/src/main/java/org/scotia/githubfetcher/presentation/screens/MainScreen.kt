@@ -1,6 +1,5 @@
 package org.scotia.githubfetcher.presentation.screens
 
-import android.widget.Toast
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.Spring
 import androidx.compose.animation.core.spring
@@ -28,14 +27,12 @@ import androidx.compose.material3.rememberTopAppBarState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.dimensionResource
@@ -48,10 +45,8 @@ import com.google.accompanist.swiperefresh.SwipeRefresh
 import com.google.accompanist.swiperefresh.rememberSwipeRefreshState
 import org.scotia.githubfetcher.R
 import org.scotia.githubfetcher.common.Constants.TAG_INPUT_VIEW
-import org.scotia.githubfetcher.common.Constants.TAG_LIST_ITEM
 import org.scotia.githubfetcher.common.Constants.TAG_LOADING_VIEW
 import org.scotia.githubfetcher.common.Constants.TAG_REPO_LIST
-import org.scotia.githubfetcher.common.Constants.TAG_USER_SECTION
 import org.scotia.githubfetcher.domain.mockGithubUser
 import org.scotia.githubfetcher.domain.mockRepos
 import org.scotia.githubfetcher.domain.models.GithubUser
@@ -146,7 +141,6 @@ fun MainScreenContent(
 ) {
     var username by rememberSaveable { mutableStateOf("") }
     val swipeRefreshState = rememberSwipeRefreshState(isRefreshing)
-
     val kbController = LocalSoftwareKeyboardController.current
 
     Column(modifier = Modifier

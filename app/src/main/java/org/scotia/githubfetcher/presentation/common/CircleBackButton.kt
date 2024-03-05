@@ -19,6 +19,9 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import org.scotia.githubfetcher.R
 
+/**
+ * Composable for the back button on the top bar
+ */
 @Composable
 fun CircleBackButton(
     modifier: Modifier = Modifier,

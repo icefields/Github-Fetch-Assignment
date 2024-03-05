@@ -38,8 +38,8 @@ import org.scotia.githubfetcher.presentation.common.TitleText
  * screens, we should rely on the app-domain data repositories instead.
  * In the case of this app, for simplicity's sake, since I only have to pass 3 variables: name,
  * image and number of forks, I'm going to pass all 3 of them using navigation args.
- * Ideal we should create a Use-Case (as define in Clean-Architecture MVVM patters) to get the user
- * object, that we can just call from everywhere.
+ * Ideally we should create a Use-Case (as define in Clean-Architecture MVVM patters) to get a
+ * complex user object and display more info.
  *
  * https://developer.android.com/guide/navigation/use-graph/pass-data#supported_argument_types
  * Caution: Passing complex data structures over arguments is considered an anti-pattern.

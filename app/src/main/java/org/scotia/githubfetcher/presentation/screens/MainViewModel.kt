@@ -36,7 +36,7 @@ class MainViewModel @Inject constructor(
     }
 
     /**
-     * this function handles all the UI events in one place
+     * this function handles all the UI events and interactions in one place
      */
     fun handleEvent(event: MainEvent) {
         when(event) {

@@ -30,8 +30,8 @@ import org.scotia.githubfetcher.presentation.common.TextWithSubtitle
  * screens, we should rely on the app-domain data repositories instead.
  * In this screen's case, I'm passing the repo name and user name as navigation args, then used the
  * repository to retrieve the repository object.
- * Ideal we should create a Use-Case (as define in Clean-Architecture MVVM pattern) to get the repo
- * object, that we can just call from everywhere.
+ * Ideally if we need the full User we should create a Use-Case (as define in Clean-Architecture
+ * MVVM pattern) to get the repo object, that we can just call from everywhere.
  *
  * https://developer.android.com/guide/navigation/use-graph/pass-data#supported_argument_types
  * Caution: Passing complex data structures over arguments is considered an anti-pattern.

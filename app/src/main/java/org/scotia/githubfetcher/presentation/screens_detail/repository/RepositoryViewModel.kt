@@ -11,9 +11,7 @@ import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.launch
 import org.scotia.githubfetcher.common.Resource
-import org.scotia.githubfetcher.domain.GithubDataRepository
 import org.scotia.githubfetcher.domain.use_case.GetRepository
-import org.scotia.githubfetcher.domain.use_case.GetUser
 import org.scotia.githubfetcher.presentation.PARAM_REPO_NAME
 import org.scotia.githubfetcher.presentation.PARAM_USER_ID
 import javax.inject.Inject
